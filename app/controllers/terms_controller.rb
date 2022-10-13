@@ -1,3 +1,4 @@
+require 'byebug'
 class TermsController < ApplicationController
     def index 
         # @terms = Terms.all
@@ -25,7 +26,9 @@ class TermsController < ApplicationController
 
     #PATCH
     def update 
-        @term = Term.find_by params[term_params]
+        # byebug
+        @term = Term.find(params[:id])
+        @term.update(term_params)
         render json: @term
     end
 
