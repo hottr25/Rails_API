@@ -1,5 +1,5 @@
 module API 
-    class TypesController < ApplicationController
+    class Types < ApplicationController
         def index 
             @types = Types.all
 

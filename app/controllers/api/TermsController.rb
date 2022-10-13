@@ -1,5 +1,5 @@
 module API 
-    class TermsController < ApplicationController
+    class TermController < ApplicationController
         def index 
             @terms = Terms.all
 
@@ -13,8 +13,8 @@ module API
 
         #POST
         def create 
-            term = Term.new(term_params)
-
+            @term = Term.new(term_params)
+            
             if @term.save 
                 render json: {@term, status: :created, location: @term}
             else

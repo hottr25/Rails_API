@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  namespace 'api' do
-    resources :term
-  end
+  resources :terms, :only => [:index, :show, :create, :update, :destroy]
+  resources :types, :only => [:index, :show, :create, :update, :destroy]
 end
