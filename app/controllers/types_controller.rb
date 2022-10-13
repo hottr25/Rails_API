@@ -24,7 +24,8 @@ class TypesController < ApplicationController
 
     #PATCH
     def update 
-        @type = Type.find_by params[:name]
+        @type = Type.find(params[:id])
+        @type.update(type_params)
         render json: @type
     end
 
